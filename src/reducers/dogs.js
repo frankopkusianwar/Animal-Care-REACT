@@ -1,6 +1,3 @@
-const FETCH_DOGS_REQUEST = 'FETCH_DOGS_REQUEST'
-const FETCH_DOGS_SUCCESS = 'FETCH_DOGS_SUCCESS'
-const FETCH_DOGS_FAILURE = 'FETCH_DOGS_FAILURE'
 
 const initialState = {
   dogs: [],
@@ -9,17 +6,17 @@ const initialState = {
 
 const dogsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_DOGS_REQUEST:
+    case 'FETCH_DOGS_REQUEST':
       return {
         ...state,
       };
-    case FETCH_DOGS_SUCCESS:
+    case 'FETCH_DOGS_SUCCESS':
       return {
         ...state,
         dogs: action.payload,
         error: '',
       };
-    case FETCH_DOGS_FAILURE:
+    case 'FETCH_DOGS_FAILURE':
       return {
         ...state,
         dogs: [],
