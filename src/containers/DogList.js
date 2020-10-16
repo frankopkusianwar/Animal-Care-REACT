@@ -1,9 +1,10 @@
 import React from 'react';
+import Dog from '../components/Dog'
 
 const DogList = () => {
   return (
     <div>
-      <p>Hello world</p>
+      <Dog />
     </div>
   )
 }
