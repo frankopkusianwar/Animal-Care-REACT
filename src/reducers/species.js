@@ -1,25 +1,25 @@
 
 const initialState = {
-  dogs: [],
+  species: [],
   error: '',
 };
 
-const dogsReducer = (state = initialState, action) => {
+const speciesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'FETCH_DOGS_REQUEST':
+    case 'FETCH_SPECIES_REQUEST':
       return {
         ...state,
       };
-    case 'FETCH_DOGS_SUCCESS':
+    case 'FETCH_SPECIES_SUCCESS':
       return {
         ...state,
-        dogs: action.payload,
+        species: action.payload,
         error: '',
       };
-    case 'FETCH_DOGS_FAILURE':
+    case 'FETCH_SPECIES_FAILURE':
       return {
         ...state,
-        dogs: [],
+        species: [],
         error: action.payload,
       };
     default:
@@ -27,4 +27,4 @@ const dogsReducer = (state = initialState, action) => {
   }
 };
 
-export default dogsReducer;
+export default speciesReducer;

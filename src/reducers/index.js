@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import { dogReducer } from './dogs'
+import speciesReducer  from './species'
 
 const rootReducer = combineReducers({
-  dogs: dogReducer,
+  species: speciesReducer,
 });
 
 export default rootReducer;

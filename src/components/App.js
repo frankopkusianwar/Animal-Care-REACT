@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from './Header'
-import DogList from '../containers/DogList'
+import SpeciesList from '../containers/SpeciesList'
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <DogList />
+      <SpeciesList />
     </div>
   );
 }
