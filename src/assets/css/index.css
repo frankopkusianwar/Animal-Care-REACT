@@ -87,3 +87,23 @@ select {
   background-color: #80a081;
   color: white;
 }
+
+.detail-content {
+  width: 80%;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+}
+
+.threat-tt, .threat-sub {
+  color: yellowgreen;
+  font-weight: bold;
+}
+
+.single-threat {
+  border-bottom: 2px solid lightgrey;
+}
+
+.single-threat:last-child {
+  border-bottom: none;
+}

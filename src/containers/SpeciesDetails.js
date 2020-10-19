@@ -16,15 +16,15 @@ const SpeciesDetails = (props) => {
   console.log(details)
   if(details[0] !== undefined) {
   return (
-    <div>
+    <div className="detail-content">
           {
             
             details.map((result, key) => (
-              <div>
-                <h5>Threat: { result.title}</h5>
-                <p>Timing: { result.timing }</p>
-                <p>Score: { result.score }</p>
-                <p>Severity:{ result.severity  }</p>
+              <div key={ key } className="single-threat">
+                <h2><span className="threat-tt">Threat:</span> { result.title}</h2>
+                <p><span className="threat-sub">Timing:</span> { result.timing }</p>
+                <p><span className="threat-sub">Score:</span> { result.score }</p>
+                <p><span className="threat-sub">Severity:</span> { result.severity  }</p>
               </div> 
             ))
           }
