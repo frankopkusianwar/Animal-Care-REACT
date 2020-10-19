@@ -1,6 +1,7 @@
 
 const initialState = {
   species: [],
+  allData: [],
   error: '',
 };
 
@@ -13,13 +14,15 @@ const speciesReducer = (state = initialState, action) => {
     case 'FETCH_SPECIES_SUCCESS':
       return {
         ...state,
-        species: action.payload,
+        species: action.payload.result,
+        allData: action.payload,
         error: '',
       };
     case 'FETCH_SPECIES_FAILURE':
       return {
         ...state,
         species: [],
+        allData: [],
         error: action.payload,
       };
     default:

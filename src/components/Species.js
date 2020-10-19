@@ -1,14 +1,14 @@
 import React from 'react';
 
-function Species() {
+function Species({ result }) {
   return (
     <tr>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>Germany</td>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>Germany</td>
+      <td>{ result.phylum_name }</td>
+      <td>{ result.order_name }</td>
+      <td>{ result.class_name }</td>
+      <td>{ result.family_name }</td>
+      <td>{ result.genus_name }</td>
+      <td>{ result.scientific_name }</td>
     </tr>
   );
 }

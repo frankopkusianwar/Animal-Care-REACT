@@ -1,9 +1,18 @@
-import React from 'react';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchSpecies } from '../actions/index'
 import Species from '../components/Species'
 
 const SpeciesList = () => {
+  
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchSpecies());
+  }, [dispatch]);
+
+  const allSpeciesData = useSelector(state => state.species.species);
+
   return (
     <div>
       <div className="sub-header">
@@ -22,7 +31,12 @@ const SpeciesList = () => {
           </tr>
         </thead>
         <tbody>
-          <Species />
+          {
+            allSpeciesData
+            .map((result, key) => (
+              <Species result={result} key={key} />
+            ))
+          }
         </tbody>
       </table>
     </div>
