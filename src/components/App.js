@@ -1,5 +1,5 @@
 import React from 'react';
-import SpeciesList from '../containers/SpeciesList'
+import SpeciesList from '../containers/SpeciesList';
 
 function App() {
   return (

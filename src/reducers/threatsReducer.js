@@ -1,9 +1,8 @@
-
 const initialState = {
   threats: [],
   error: '',
 };
- 
+
 const threatsReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'FETCH_SPECIES_THREATS_REQUEST':

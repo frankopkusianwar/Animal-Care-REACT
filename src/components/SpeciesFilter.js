@@ -1,14 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { filterSpecies } from '../actions/index' 
-
+import { filterSpecies } from '../actions/index';
 
 const SpeciesFilter = () => {
   const categories = ['CHORDATA', 'ARTHROPODA', 'MOLLUSCA'];
   const dispatch = useDispatch();
 
   const handleFilter = ({ target }) => {
-    dispatch(filterSpecies(target.value))
+    dispatch(filterSpecies(target.value));
   };
 
   return (

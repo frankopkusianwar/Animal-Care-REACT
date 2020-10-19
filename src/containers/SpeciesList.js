@@ -1,12 +1,12 @@
+/* eslint-disable react/no-array-index-key */
+
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchSpecies } from '../actions/index'
-import Species from '../components/Species'
-import SpeciesFilter from '../components/SpeciesFilter'
-
+import { fetchSpecies } from '../actions/index';
+import Species from '../components/Species';
+import SpeciesFilter from '../components/SpeciesFilter';
 
 const SpeciesList = () => {
-  
   const dispatch = useDispatch();
   const filter = useSelector(state => state.filter);
 
@@ -15,13 +15,16 @@ const SpeciesList = () => {
   }, [dispatch]);
 
   const allSpeciesData = useSelector(state => state.species.species);
-  const count = useSelector(state => state.species.allData.count)
+  const count = useSelector(state => state.species.allData.count);
 
   return (
     <div>
       <div className="sub-header">
-        <div className="selector-content"><SpeciesFilter/></div>
-        <h4>Total Animal Species: <span className="count">{ count }</span></h4>
+        <div className="selector-content"><SpeciesFilter /></div>
+        <h4>
+          Total Animal Species:
+          <span className="count">{ count }</span>
+        </h4>
       </div>
       <table id="species">
         <thead>
@@ -38,15 +41,15 @@ const SpeciesList = () => {
         <tbody>
           {
             allSpeciesData
-            .filter(specie => (filter === 'All' ? true : specie.phylum_name === filter))
-            .map((result, key) => (
-              <Species result={result} key={key} />
-            ))
+              .filter(specie => (filter === 'All' ? true : specie.phylum_name === filter))
+              .map((result, key) => (
+                <Species result={result} key={key} />
+              ))
           }
         </tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default SpeciesList
+export default SpeciesList;
