@@ -5,6 +5,7 @@ const FETCH_SPECIES_FAILURE = 'FETCH_SPECIES_FAILURE'
 const FETCH_SPECIES_THREATS_REQUEST = 'FETCH_SPECIES_THREATS_REQUEST'
 const FETCH_SPECIES_THREATS_REQUEST_SUCCESS = 'FETCH_SPECIES_THREATS_REQUEST_SUCCESS'
 const FETCH_SPECIES_THREATS_REQUEST_FAILURE = 'FETCH_SPECIES_THREATS_REQUEST_FAILURE'
+const FILTER_SPECIES = 'FILTER_SPECIES'
 
 
 const URL = `https://apiv3.iucnredlist.org/api/v3/species/region/eastern_africa/page/0?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`
@@ -47,6 +48,11 @@ export const fetchSpecies = () => dispatch => {
     dispatch(fetchSpeciesFailure(errorMessage));
   });
 };
+
+export const filterSpecies = (name) => ({
+  type: FILTER_SPECIES,
+  payload: name,
+});
 
 export const fetchSpeciesThreats = (name) => dispatch => {
 const SPECIESURL = `http://apiv3.iucnredlist.org/api/v3/threats/species/name/${name}/region/eastern_africa?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`

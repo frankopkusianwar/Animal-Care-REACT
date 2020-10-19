@@ -2,22 +2,26 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSpecies } from '../actions/index'
 import Species from '../components/Species'
+import SpeciesFilter from '../components/SpeciesFilter'
+
 
 const SpeciesList = () => {
   
   const dispatch = useDispatch();
+  const filter = useSelector(state => state.filter);
 
   useEffect(() => {
     dispatch(fetchSpecies());
   }, [dispatch]);
 
   const allSpeciesData = useSelector(state => state.species.species);
+  const count = useSelector(state => state.species.allData.count)
 
   return (
     <div>
       <div className="sub-header">
-        <p>filter goes here</p>
-        <p>Total Animal sSpecies: 35456</p>
+        <SpeciesFilter/>
+  <p>Total Animal Species: { count }</p>
       </div>
       <table id="species">
         <thead>
@@ -34,6 +38,7 @@ const SpeciesList = () => {
         <tbody>
           {
             allSpeciesData
+            .filter(specie => (filter === 'All' ? true : specie.phylum_name === filter))
             .map((result, key) => (
               <Species result={result} key={key} />
             ))
