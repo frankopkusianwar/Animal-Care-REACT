@@ -55,7 +55,7 @@ export const filterSpecies = name => ({
 });
 
 export const fetchSpeciesThreats = name => dispatch => {
-  const SPECIESURL = `http://apiv3.iucnredlist.org/api/v3/threats/species/name/${name}/region/eastern_africa?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
+  const SPECIESURL = `https://apiv3.iucnredlist.org/api/v3/threats/species/name/${name}/region/eastern_africa?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`;
   dispatch(fetchSpeciesThreatRequest);
   axios.get(SPECIESURL).then(response => {
     const threats = response.data;
