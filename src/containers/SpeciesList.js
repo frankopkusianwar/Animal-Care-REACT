@@ -28,6 +28,7 @@ const SpeciesList = () => {
             <th>Family Name</th>
             <th>Genus Name</th>
             <th>Scientific Name</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
