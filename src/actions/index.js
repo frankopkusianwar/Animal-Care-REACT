@@ -2,9 +2,9 @@ import axios from 'axios';
 const FETCH_SPECIES_REQUEST = 'FETCH_SPECIES_REQUEST'
 const FETCH_SPECIES_SUCCESS = 'FETCH_SPECIES_SUCCESS'
 const FETCH_SPECIES_FAILURE = 'FETCH_SPECIES_FAILURE'
-const FETCH_SPECIES_THREATS_REQUEST = 'FETCH_SPECIES_THREATS'
-const FETCH_SPECIES_THREATS_REQUEST_SUCCESS = 'FETCH_SPECIES_THREATS'
-const FETCH_SPECIES_THREATS_REQUEST_FAILURE = 'FETCH_SPECIES_THREATS'
+const FETCH_SPECIES_THREATS_REQUEST = 'FETCH_SPECIES_THREATS_REQUEST'
+const FETCH_SPECIES_THREATS_REQUEST_SUCCESS = 'FETCH_SPECIES_THREATS_REQUEST_SUCCESS'
+const FETCH_SPECIES_THREATS_REQUEST_FAILURE = 'FETCH_SPECIES_THREATS_REQUEST_FAILURE'
 
 
 const URL = `https://apiv3.iucnredlist.org/api/v3/species/region/eastern_africa/page/0?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`
@@ -29,7 +29,7 @@ export const fetchSpeciesThreatRequest = () => ({
 
 export const fetchSpeciesThreatSuccess = (threats) => ({
   type: FETCH_SPECIES_THREATS_REQUEST_SUCCESS,
-  payload: species,
+  payload: threats,
 });
 
 export const fetchSpeciesThreatFailure = (error) => ({
@@ -48,7 +48,7 @@ export const fetchSpecies = () => dispatch => {
   });
 };
 
-export const fetchOneSpecies = (name) => dispatch => {
+export const fetchSpeciesThreats = (name) => dispatch => {
 const SPECIESURL = `http://apiv3.iucnredlist.org/api/v3/threats/species/name/${name}/region/eastern_africa?token=9bb4facb6d23f48efbf424bb05c0c1ef1cf6f468393bc745d42179ac4aca5fee`
   dispatch(fetchSpeciesThreatRequest);
   axios.get(SPECIESURL).then(response => {

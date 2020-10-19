@@ -1,7 +1,6 @@
 
 const initialState = {
-  species: [],
-  allData: [],
+  threats: [],
   error: '',
 };
  
@@ -14,7 +13,7 @@ const threatsReducer = (state = initialState, action) => {
     case 'FETCH_SPECIES_THREATS_REQUEST_SUCCESS':
       return {
         ...state,
-        threats: action.payload,
+        threats: action.payload.result,
         error: '',
       };
     case 'FETCH_SPECIES_THREATS_REQUEST_FAILURE':

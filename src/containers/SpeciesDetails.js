@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchSpeciesThreats } from '../actions/index'
 
 const SpeciesDetails = (props) => {
 
@@ -7,12 +8,20 @@ const SpeciesDetails = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchSpeciesThreats());
-  }, [dispatch]);
+    dispatch(fetchSpeciesThreats(speciesName));
+  }, [dispatch, speciesName]);
+
+  const threatData = useSelector(state => state.threats.threats);
+  console.log(threatData)
 
   return (
     <div>
-      <p>here go the details</p>
+          {
+            threatData 
+            .map((result, key) => (
+              <p>{ result.title}</p> 
+            ))
+          }
     </div>
   )
 }
