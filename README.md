@@ -22,7 +22,7 @@ Animal Care is an app that shows a list of all animal species in the East Africa
 
 ## Live Demo
 
-[Live Demo Link]()
+[Live Demo Link](https://animal-care-app.herokuapp.com/)
 
 ## Getting Started
 
