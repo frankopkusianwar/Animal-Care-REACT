@@ -28,7 +28,8 @@ ul li {
   margin-top: 13px;
 }
 
-.home, .t-link {
+.home,
+.t-link {
   text-decoration: none;
   color: gray;
   font-weight: bold;
@@ -44,10 +45,10 @@ ul li {
 }
 
 .sub-header {
- display: flex;
- justify-content: space-between;
- width: 95%;
- margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 10px auto;
 }
 
 select {
@@ -71,14 +72,15 @@ select {
   margin: auto;
 }
 
-#species td, #customers th {
+#species td,
+#customers th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-#species tr:nth-child(even){background-color: #f2f2f2;}
+#species tr:nth-child(even) { background-color: #f2f2f2; }
 
-#species tr:hover {background-color: #ddd;}
+#species tr:hover { background-color: #ddd; }
 
 #species th {
   padding-top: 12px;
@@ -95,7 +97,8 @@ select {
   padding: 20px;
 }
 
-.threat-tt, .threat-sub {
+.threat-tt,
+.threat-sub {
   color: yellowgreen;
   font-weight: bold;
 }
