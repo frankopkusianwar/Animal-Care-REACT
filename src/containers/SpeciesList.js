@@ -20,8 +20,8 @@ const SpeciesList = () => {
   return (
     <div>
       <div className="sub-header">
-        <SpeciesFilter/>
-  <p>Total Animal Species: { count }</p>
+        <div className="selector-content"><SpeciesFilter/></div>
+        <h4>Total Animal Species: <span className="count">{ count }</span></h4>
       </div>
       <table id="species">
         <thead>
