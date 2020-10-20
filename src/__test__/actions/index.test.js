@@ -1,7 +1,7 @@
 import moxios from 'moxios';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import { fetchSpeciesRequest, fetchSpeciesSuccess, fetchSpeciesFailure } from '../../actions/index'
+import { fetchSpeciesSuccess, fetchSpeciesFailure } from '../../actions/index';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
@@ -29,7 +29,7 @@ describe('species actions', () => {
       status: 200,
       response: mockData,
     });
-    store.dispatch(fetchSpeciesSuccess(mockData.data))
+    store.dispatch(fetchSpeciesSuccess(mockData.data));
     expect(store.getActions()).toEqual(expectedActions);
   });
 
@@ -48,7 +48,7 @@ describe('species actions', () => {
       status: 400,
       error: mockData,
     });
-    store.dispatch(fetchSpeciesFailure(mockData.error))
+    store.dispatch(fetchSpeciesFailure(mockData.error));
     expect(store.getActions()).toEqual(expectedActions);
   });
 });
