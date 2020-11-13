@@ -50,6 +50,11 @@ To get a local copy up and running follow these simple example steps.
 - Type ```http://localhost:3000/``` in the browser tab.
 - Now you can use the app.
 
+
+### Test
+
+- To run tests `bundle excec rspec`
+
 ## Author
 
 - Okiror Frank
